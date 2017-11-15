@@ -7,14 +7,25 @@ public class BinarySearch {
 		int[] test1 = {1,2,3,4,5,6,7,8,9,10};
 		int[] test2 = {0,4,5,6,12,15,17,23,29};
 		
-		System.out.println(binarySeach(test1, 3, 0, test1.length));
-		System.out.println(binarySeach(test2, 23, 0, test2.length));
-		System.out.println(binarySeach(test1, 1, 0, test1.length));
-		System.out.println(binarySeach(test2, 25, 0, test2.length));
+		//System.out.println(binarySearch(test1, 3, 0, test1.length));
+		//System.out.println(binarySearch(test2, 23, 0, test2.length));
+		//System.out.println(binarySearch(test1, 1, 0, test1.length));
+		//System.out.println(binarySearch(test2, 25, 0, test2.length));
+		
+		for (int i = -1; i< test1.length+1; i++)
+		{
+			System.out.print(binarySearch(test2,i,0,test1.length));
+		}
+		System.out.println();
+		for (int i = -1; i< test2.length+1; i++)
+		{
+			System.out.print(binarySearch(test2,i,0,test2.length));
+		}
+		System.out.println();
 		
 	}
 	
-	public static int binarySeach(int[] nums, int query, int first, int last)
+	public static int binarySearch(int[] nums, int query, int first, int last)
 	{
 		if(last>=first)
 		{
@@ -28,10 +39,10 @@ public class BinarySearch {
 			
 			if(guess>query)
 			{
-				return binarySeach(nums,query,first,index-1);				
+				return binarySearch(nums,query,first,index-1);				
 			}
 			
-			return binarySeach(nums, query, index+1, last);
+			return binarySearch(nums, query, index+1, last);
 		}
 		return -1;
 	}
